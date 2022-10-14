@@ -8,7 +8,7 @@ RUN mkdir -p /var/www/html
 COPY ./src/serv.conf /etc/nginx/http.d/default.conf
 
 RUN mkdir -p /etc/nginx/ssl
-RUN openssl req -nodes -x509 -sha256 -newkey rsa:4096 -keyout /etc/nginx/ssl/key.pem -out /etc/nginx/ssl/cert.pem -days 365 -subj "/C=FR/ST=RHONE_ALPES/L=LYON/O=INCEPTION/CN=abelache.42.fr"
+RUN openssl req -nodes -x509 -sha256 -newkey rsa:4096 -keyout /etc/nginx/ssl/inception.key -out /etc/nginx/ssl/inception.cert -days 365 -subj "/C=FR/ST=RHONE_ALPES/L=LYON/O=INCEPTION/CN=abelache.42.fr"
 
 RUN rc-update add nginx default
 EXPOSE 443
