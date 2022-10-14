@@ -5,7 +5,7 @@ RUN apk upgrade
 RUN apk add nginx openssl openrc
 
 RUN mkdir -p /var/www/html
-COPY ./serv.conf /etc/nginx/http.d/default.conf
+COPY ./src/serv.conf /etc/nginx/http.d/default.conf
 
 RUN mkdir -p /etc/nginx/ssl
 RUN openssl req -nodes -x509 -sha256 -newkey rsa:4096 -keyout /etc/nginx/ssl/key.pem -out /etc/nginx/ssl/cert.pem -days 365 -subj "/C=FR/ST=RHONE_ALPES/L=LYON/O=INCEPTION/CN=abelache.42.fr"
