@@ -13,7 +13,7 @@ RUN	adduser -u 82 -D -S -G www-data www-data
 RUN chown -R 777 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
-COPY /src/wp-config.php ./
+COPY src/wp-config.php ./
 COPY src/Script.sh ./
 
 RUN chmod +x Script.sh

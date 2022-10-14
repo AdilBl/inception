@@ -3,7 +3,7 @@
 define( 'DB_NAME', getenv("mariadb_dbname"));
 define( 'DB_USER', getenv("mariadb_user"));
 define( 'DB_PASSWORD', getenv("mariadb_pass"));
-define( 'DB_HOST', getenv("mariadb_host").':3306');
+define( 'DB_HOST', getenv("mariadb_host") . ":3306");
 define( "DB_CHARSET",			"utf8");
 define( "DB_COLLATE",			"utf8_general_ci");
 
