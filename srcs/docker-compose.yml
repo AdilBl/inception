@@ -18,7 +18,7 @@ volumes:
 services:
   mariadb:
     container_name: mariadb
-    build: requirements/MariaDB
+    build: requirements/Mariadb
     image: mariadb
     env_file: .env
     ports:
