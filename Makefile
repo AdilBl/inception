@@ -12,8 +12,8 @@ clean:
 	docker container prune -f
 
 fclean:	clean
-	sudo rm -rf /home/pdeshaye/data/www/*
-	sudo rm -rf /home/pdeshaye/data/database/*
+	sudo rm -rf /home/abelache/data/www/*
+	sudo rm -rf /home/abelache/data/database/*
 	docker volume rm -f inception_database
 	docker volume rm -f inception_www
 	docker system prune --force --all
