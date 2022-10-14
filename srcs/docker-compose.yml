@@ -3,14 +3,14 @@ version: '3.6'
 volumes:
   database:
     driver: local
-    drivers_opts:
+    driver_opts:
       o: bind
       type: none
       device: "/home/abelache/data/database"
 
   www:
     driver: local
-    drivers_opts:
+    driver_opts:
       o: bind
       type: none
       device: "/home/abelache/data/www"
