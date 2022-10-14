@@ -1,29 +1,30 @@
 <?php
 
-define( 'DB_NAME', getenv("mariadb_dbname"));
-define( 'DB_USER', getenv("mariadb_user"));
-define( 'DB_PASSWORD', getenv("mariadb_pass"));
-define( 'DB_HOST', getenv("mariadb_host") . ":3306");
-define( "DB_CHARSET",			"utf8");
-define( "DB_COLLATE",			"utf8_general_ci");
+define("DB_NAME",				getenv("mariadb_dbname"));
+define("DB_USER",				getenv("mariadb_user"));
+define("DB_PASSWORD",			getenv("mariadb_pass"));
+define("DB_HOST",				getenv("mariadb_host") . ":3306");
+define("DB_CHARSET",			"utf8");
+define("DB_COLLATE",			"utf8_general_ci");
 
+define('AUTH_KEY',         'LsjkcvI*!6@rLgnq7+$^F_z<:]Og[MU=?PZ:^hQ_a>cU}LjAoFP-H|FCAMw+%4>b');
+define('SECURE_AUTH_KEY',  'KKn)-C=W+7<qd-FU})b|LLg;A*<- -Lz@W+0z%-X%1~$IqAUUJU5W:@_$0#d!/Rh');
+define('LOGGED_IN_KEY',    '1T.aT |!TC22;oJIe)O <]Y|J$.u#]gd)4nQ!K_oWoaFD&yn?%7!t-c9N3,O_4 U');
+define('NONCE_KEY',        ' ]xdinfvTS)HPiSwON94TR]((#9*]2zz5>RP/h-T#UM,KpLc#XZ/14]Q@-e]W5MF');
+define('AUTH_SALT',        'c7*~M^V:X]a]7cSw_uEcS[)vMt:^*|AW;._P.oyDx;#w;V_7r/?*]!cdSo52d.Q,');
+define('SECURE_AUTH_SALT', 'q%ahI>z$ZaxP%K.;+i JaV|6W7+cd/ifuJc)`FA5KPmK{j|OVt~rO;+o5a`.a/|;');
+define('LOGGED_IN_SALT',   '%9iEHrvCmwJV5oISkVF(2n:+{SsTs(y%&Q k*f:dat=YlDSB`,*O--|>m&U|)?)|');
+define('NONCE_SALT',       '+J>*a(DSm9NFM5^5]H=y-}V+P19DD=x&ymdVW$dM8AFUx?,K,03(w+!{:HM2M&z|');
 
+/* WordPress database table prefix. */
+$table_prefix = 'wp_';
 
-define('AUTH_KEY',         'UJ+m=j^-aYMzN.#C3H;c8nDOK[z%WOd_j8^5W%Z^%4na-YJw>QCt>:7h6(m)N;GZ');
-define('SECURE_AUTH_KEY',  'u;-px~W9FCse4;`++{[!{+#,L<YFv3/h$b]=ZS[Q.5q/fZor2>%rir$Wtd[o+QT?');
-define('LOGGED_IN_KEY',    '$LP7${;X9mtv;;O2;RtBD]0T-f{`&:FdhWS/5S%@%/n-.TO^eO 5Agu11: -=@4_');
-define('NONCE_KEY',        '*/HDAVbC1Z};v|CpHQr+f;7P,xJWaN+w>3%LR^t}1}UV%yj$]Ef:-?KQIJ5p&f#/');
-define('AUTH_SALT',        '[AIZOV|Cjl2^0vfK&Pel~n#Sk5JHY>A?.y1V<^[)SkB%D9BI+5hLqM1[w,27HiL;');
-define('SECURE_AUTH_SALT', ',J`FVj|tXfZZ-GVlmD[}bju^<8Id*o%{/e}+qV|~tW>wXE:V=Tiv+*U(Ju-Y8@+s');
-define('LOGGED_IN_SALT',   'kac-0,#MBicTw1>TO|J#=!c N|LI!BFx]pb^pGV<+j}w $QFGeJ2+n=P^yFMlB1@');
-define('NONCE_SALT',       'Jvz+r w8`oY78 ,:9N<2VH A:OpCAhD`M||hTdS;Lx2-6bb2wAQ`^7(w)sUqtx|x');
-
-$tableprefix = 'wp';
-
+/* For developers: WordPress debugging mode. */
 define( 'WP_DEBUG', true );
 
+/** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-    define( 'ABSPATH', DIR . '/' );
+	define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
