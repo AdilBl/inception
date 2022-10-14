@@ -1,5 +1,63 @@
-version: "3"
+version: '3.6'
+
+volumes:
+  database:
+    driver: local
+    drivers_opts:
+      o: bind
+      type: none
+      device: "home/abelache/data/database"
+
+  www:
+    driver: local
+    drivers_opts:
+      o: bind
+      type: none
+      device: "home/abelache/data/www"
+
 services:
-	monalpine:
-		image: alpine
-		command: ls
+  mariadb:
+    container_name: mariadb
+    build: requirements/MariaDB
+    image: mariadb
+    env_file: .env
+    ports:
+      - 3306:3306
+    networks:
+      - inception
+    volumes:
+      - database:/var/lib/mysql
+    restart: unless-stopped
+
+  wordpress:
+  container_name: wordpress
+  build: requirements/Wordpress
+  image: wordpress
+  env_file: .env
+  depends_on:
+    - mariadb
+  networks:
+    - inception
+  volumes:
+    - www:/var/www/html
+  restart: unless-stopped
+
+  nginx:
+    container_name: nginx
+    build: requirements/Nginx
+    image: nginx
+    env_file: .env
+    depends_on:
+    - mariadb
+    ports:
+    - 443:443
+    networks:
+    - inception
+    volumes:
+    - www:/var/www/html
+    restart : unless-stopped
+
+networks:
+  inception:
+    name: inception
+    driver: bridge
