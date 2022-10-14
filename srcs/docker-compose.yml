@@ -6,14 +6,14 @@ volumes:
     drivers_opts:
       o: bind
       type: none
-      device: "home/abelache/data/database"
+      device: "/home/abelache/data/database"
 
   www:
     driver: local
     drivers_opts:
       o: bind
       type: none
-      device: "home/abelache/data/www"
+      device: "/home/abelache/data/www"
 
 services:
   mariadb:
